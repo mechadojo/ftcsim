@@ -1,0 +1,38 @@
+#VRML_OBJ V8.5 utf8
+
+PROTO FTC_Field_Mat [
+    field SFVec3f    translation   0 0 0
+    field SFRotation rotation      0 1 0 0
+    field MFString   image      [""]
+]
+
+{
+# Change scale from meters to inches
+
+Transform {
+  scale 0.0254 0.0254 0.0254
+  children [
+    Solid {
+      translation IS translation
+	  rotation IS rotation
+      children [
+        Shape {
+          appearance Appearance {
+            material Material {
+              diffuseColor 0.639216 0.639216 0.639216
+            }
+            texture ImageTexture {
+            url IS image
+            }
+            
+          }
+          geometry DEF FLOOR_MAT Box {
+            size 141 0.4 141
+          }
+        }
+      ]
+      boundingObject USE FLOOR_MAT
+    }
+  ]
+}
+}

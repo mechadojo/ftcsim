@@ -1,0 +1,34 @@
+#VRML_OBJ V8.5 utf8
+
+PROTO FTC_VelocityVortex_CapBall [
+    field SFVec3f    translation   0 0 0
+    field SFColor    color         1 0 0
+]
+
+{
+Solid {
+  #.202 .279 .202 - used simulation to find resting location
+  translation IS translation
+  
+  children [
+    DEF CAP_BALL Shape {
+      appearance Appearance {
+        material Material {
+          diffuseColor IS color
+        }
+      }
+      geometry Sphere {
+        radius 0.265
+        subdivision 2
+      }
+    }
+  ]
+  boundingObject USE CAP_BALL
+  physics Physics {
+    density -1
+    mass 1.103
+    damping Damping {
+    }
+  }
+}
+}

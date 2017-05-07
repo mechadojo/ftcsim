@@ -1,0 +1,96 @@
+#VRML_SIM V8.5 utf8
+WorldInfo {
+}
+Viewpoint {
+  orientation 0.067777922 -0.99255226 -0.10122331 4.2617127
+  position 5.8347201 1.8687246 -2.4814826
+}
+DirectionalLight {
+  ambientIntensity 1
+  direction -0.33 -1 -0.5
+  intensity 0.5
+}
+DirectionalLight {
+  ambientIntensity 1
+  direction 0.33 -1 0
+  intensity 0.5
+}
+Floor {
+  size 50 20
+  tileSize 2.5 1.875
+  texture [
+    "textures/basketball-floor-texture.jpg"
+  ]
+}
+TexturedBackground {
+}
+Group {
+  children [
+    FTC_Field_Walls {
+      translation 0 6 0
+    }
+    FTC_Field_Mat {
+      translation 0 0.2 0
+      rotation 0 1 0 1.5708
+      image [
+        "textures/field_mat.png"
+      ]
+    }
+    FTC_VelocityVortex_CornerRamp {
+      translation 65.5 0 65.5
+      rotation 0 1 0 -1.5708
+    }
+    FTC_VelocityVortex_CornerRamp {
+      translation -65.5 0 -65.5
+      rotation 0 1 0 1.5708
+      color 0 0 1
+    }
+    FTC_VelocityVortex_CenterGoalBase {
+      rotation 0 1 0 1.5708
+    }
+    FTC_VelocityVortex_CenterGoal {
+      rotation 0 1 0 -1.5708
+    }
+  ]
+}
+FTC_VelocityVortex_Beacon {
+  translation 12 11 71
+  image [
+    "textures\\gears.png"
+  ]
+  controller "BeaconController"
+  name "beaconRedNear"
+}
+FTC_VelocityVortex_Beacon {
+  translation -36 11 71
+  image [
+    "textures\\tools.png"
+  ]
+  controller "BeaconController"
+  name "beaconRedFar"
+}
+FTC_VelocityVortex_Beacon {
+  translation -71 11 36
+  rotation 0 1 0 -1.5708
+  image [
+    "textures\\legos.png"
+  ]
+  controller "BeaconController"
+  name "beaconBlueFar"
+}
+FTC_VelocityVortex_Beacon {
+  translation -71 11 -12
+  rotation 0 1 0 -1.5708
+  image [
+    "textures\\wheels.png"
+  ]
+  controller "BeaconController"
+  name "beaconBlueNear"
+}
+FTC_VelocityVortex_CapBall {
+  translation 0.1987 0.2792 0.202
+}
+FTC_VelocityVortex_CapBall {
+  translation -0.202 0.279 -0.202
+  color 0 0 1
+}

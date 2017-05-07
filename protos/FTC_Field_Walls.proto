@@ -1,0 +1,112 @@
+#VRML_OBJ V8.5 utf8
+PROTO FTC_Field_Walls [
+  field SFVec3f    translation   0 0 0
+  field SFRotation rotation      0 1 0 0
+]
+
+{
+# Change scale from meters to inches
+Transform { scale 0.0254 0.0254 0.0254 children [
+Transform {
+  translation IS translation
+  rotation IS rotation
+  
+  children [
+    DEF FIELD_WALLS Group { children [
+    Transform {
+      translation 0 0 -71
+      children [
+        DEF FIELD_SIDE Group {
+          children [
+            Transform {
+              children [
+                DEF FIELD_WALL Solid {
+                  boundingObject Box { size 47 12 1 }
+                  children [
+                   
+                    Transform {
+                      translation 0 5.5 0
+                      children [
+                        DEF FIELD_FRAME_TOP Shape {
+                          appearance DEF FIELD_FRAME_APPEARANCE Appearance {
+                            material DEF FIELD_FRAME_MATERIAL Material {
+                              diffuseColor .4 .4 .4
+                            }
+                          }
+                          geometry Box {
+                            size 46.875 1.176 1.065
+                          }
+                        }
+                      ]
+                    }
+                    Transform {
+                      translation 0 -5.5 0
+                      children [
+                        USE FIELD_FRAME_TOP
+                      ]
+                    }
+                    Transform {
+                      translation 0 0 0.25
+                      children [
+                        Shape {
+                          appearance Appearance {
+                            material Material {
+                              transparency 0.9
+                            }
+                          }
+                          geometry Box {
+                            size 46.67 10.66 0.118
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+            Transform {
+              translation 47 0 0
+              children [
+                USE FIELD_WALL
+              ]
+            }
+            Transform {
+              translation -47 0 0
+              children [
+                USE FIELD_WALL
+              ]
+            }
+          ]
+        }
+      ]
+    }
+    Transform {
+      translation -71 0 0
+      rotation 0 1 0 1.5708
+      children [
+        USE FIELD_SIDE
+      ]
+    }
+    Transform {
+      translation 71 0 0
+      rotation 0 1 0 -1.5708
+      children [
+        USE FIELD_SIDE
+      ]
+    }
+    Transform {
+      translation 0 0 71
+      rotation 0 1 0 3.1415
+      children [
+        USE FIELD_SIDE
+      ]
+    }
+  ]
+}
+
+]
+
+}
+]}
+
+}
