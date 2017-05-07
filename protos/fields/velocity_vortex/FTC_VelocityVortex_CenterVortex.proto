@@ -1,0 +1,66 @@
+#VRML_OBJ V8.5 utf8
+# Velocity Vortex Center Goal Baskets
+
+PROTO FTC_VelocityVortex_CenterVortex [
+    field SFVec3f    translation   0 0 0
+    field SFRotation rotation      0 1 0 0
+    field SFNode physics NULL
+]
+
+{
+Solid {
+  translation IS translation
+  rotation IS rotation
+
+  physics IS physics
+           
+  children [
+    DEF CENTER_VORTEX Group {
+      children [
+        Transform {
+          translation 0 -2.25 0
+          rotation 1 0 0 1.5708
+          children [
+            DEF CENTER_SUPPORT_CROSS Shape {
+              appearance DEF CENTER_SUPPORT_COLOR Appearance {
+                material Material {
+                  diffuseColor 1 1 0
+                }
+              }
+              geometry Cylinder {
+                height 30
+                radius 0.85
+              }
+            }
+          ]
+        }
+        
+        Transform {
+          translation 0 -17.5 0
+          children [
+            DEF CENTER_SUPPORT_RISER Shape {
+              appearance USE CENTER_SUPPORT_COLOR
+              geometry Cylinder {
+                height 30
+                radius 0.85
+              }
+            }
+          ]
+         
+        }
+      ]
+    }
+      FTC_VelocityVortex_Basket {
+          translation 0 0 15
+          rotation 0 1 0 -1.5708
+        }
+       FTC_VelocityVortex_Basket {
+          translation 0 0 -15
+          rotation 0 1 0 1.5708
+          color 0 0 1
+        }
+  ]
+  
+  boundingObject USE CENTER_VORTEX
+}
+}

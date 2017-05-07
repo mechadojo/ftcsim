@@ -1,21 +1,30 @@
 #VRML_OBJ V8.5 utf8
+# Velocity Vortex Center Goal Base
 
 PROTO FTC_VelocityVortex_CenterGoalBase [
     field SFVec3f    translation   0 0 0
     field SFRotation rotation      0 1 0 0
+    field SFNode     basket        NULL
+    field SFNode     jointParameters NULL
 ]
 
 {
 # Change scale from meters to inches
 
-Transform {
+Robot {
   scale 0.0254 0.0254 0.0254
+
   children [
     Transform {
 	  translation IS translation
       rotation IS rotation
       children [
+        HingeJoint {
+          jointParameters IS jointParameters
+          endPoint IS basket
+        }
         Solid {
+          
           children [
             DEF CENTER_GOAL_BASE Shape {
               appearance Appearance {

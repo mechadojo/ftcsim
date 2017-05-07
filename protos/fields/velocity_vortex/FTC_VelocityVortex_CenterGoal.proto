@@ -1,4 +1,6 @@
 #VRML_OBJ V8.5 utf8
+# Velocity Vortex Center Goal
+
 PROTO FTC_VelocityVortex_CenterGoal [
     field SFVec3f    translation   0 0 0
     field SFRotation rotation      0 1 0 0

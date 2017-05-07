@@ -1,4 +1,5 @@
 #VRML_OBJ V8.5 utf8
+# Velocity Vortex Corner Ramp
 
 PROTO FTC_VelocityVortex_CornerRamp [
     field SFVec3f    translation   0 0 0

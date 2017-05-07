@@ -2,8 +2,8 @@
 WorldInfo {
 }
 Viewpoint {
-  orientation 0.067777922 -0.99255226 -0.10122331 4.2617127
-  position 5.8347201 1.8687246 -2.4814826
+  orientation 0.086075425 -0.99001453 -0.11163444 4.1306281
+  position 6.0906617 2.2189338 -3.4575663
 }
 DirectionalLight {
   ambientIntensity 1
@@ -33,7 +33,7 @@ Group {
       translation 0 0.2 0
       rotation 0 1 0 1.5708
       image [
-        "textures/field_mat.png"
+        "velocity_vortex/textures/field_mat.png"
       ]
     }
     FTC_VelocityVortex_CornerRamp {
@@ -45,13 +45,22 @@ Group {
       rotation 0 1 0 1.5708
       color 0 0 1
     }
-    FTC_VelocityVortex_CenterGoalBase {
-      rotation 0 1 0 1.5708
-    }
-    FTC_VelocityVortex_CenterGoal {
-      rotation 0 1 0 -1.5708
-    }
   ]
+}
+FTC_VelocityVortex_CenterGoalBase {
+  rotation 0 1 0 1.5708
+  basket FTC_VelocityVortex_CenterVortex {
+    translation 0 33.8 0
+    rotation 0 -1 0 0.7854
+    physics Physics {
+      density 100
+    }
+  }
+  jointParameters HingeJointParameters {
+    axis 0 1 0
+    dampingConstant 1000
+    staticFriction 0.2
+  }
 }
 FTC_VelocityVortex_Beacon {
   translation 12 11 71

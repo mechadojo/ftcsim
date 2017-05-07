@@ -1,5 +1,5 @@
 #VRML_OBJ V8.5 utf8
-
+# Velocity Vortex Cap Ball
 PROTO FTC_VelocityVortex_CapBall [
     field SFVec3f    translation   0 0 0
     field SFColor    color         1 0 0
